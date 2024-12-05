@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/png" href="https://db3pap002files.storage.live.com/y4mSAg8q-N2DYhF_9BEYIl32vVR4sIaZCK6J8TiBzA78v2L1z5YQJrnBz3T4CxSlSdxuZm6tI4MR1yDtABajwtQaVIXZikZQc2J4OYLDfwQm4Ug3O0daoK4wvXR8GuhGjqc0TYuDb6_vV9bt7yZc2sQ6FmumDchmHg9SrdcgA9uuDtX2v6ewy0j3MHDe68ivYmgLiwiaFp5HEt3TrupmhxamDy0T7xWN7lkYbAXWqCvIfo?encodeFailures=1&width=500&height=500">
+</head>
+
+
+
+<style>
+
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://db3pap002files.storage.live.com/y4muBNXSQAru0_BC4NlV3d8elTmIvU_yXi5WskFoeblu6p0S9kbuB-pXpP-6_OoAvnnDdteN8yQoVCzC5g1QSoYcGbbliWG6S-PnQEmh7NWM5U7qjRzie7SE4e4wIrs4SGj3Ts48zSrEL_HibV407pAiEaBQAnkge4XxIBKs78MuS_lwpFCf56RwUASpfvx65OjoIAy_Jxxac6I4RU5V1xfcINKErIsWh1hbyIz2Rj811I?encodeFailures=1&width=626&height=352");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: rgba(0, 12, 41,0.9);
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.info-section {
+    background-color: rgba(176, 196, 222, 0.9);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.time .hours-minutes {
+    font-size: 3em;    
+    font-weight: bold;
+}
+
+.time .seconds {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.time .date {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.visitor-counter {
+    font-size: 1.2em;
+    color: #333;
+}
+
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(176, 196, 222, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.category-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.category-content {
+    padding: 15px;
+}
+
+.category-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.category-content p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3a3a3a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.category-image-gallery img {
+    width: calc(50% - 15px);
+}
+
+.category-image-gallery img:nth-child(n+3) {
+    width: 100%;
+}
+
+
+footer {
+    background-color: rgba(0, 12, 41,0.9);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+</style>
+
+
+
+<body>
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <p>Explorez ce que j'ai créé et imaginé...</p>
+
+    </header>
+
+    <div class="info-section">
+        <div class="time">
+            <div class="hours-minutes" id="hours-minutes">00:00</div>
+            <div class="seconds" id="seconds">00</div>
+            <div class="date" id="date">Chargement...</div>
+        </div>
+        <div class="visitor-counter">
+            Nombre de visiteurs : <span id="visitor-count">0</span>
+        </div>
+    </div>
+    
+
+    <main>
+        <div class="category-container">
+            <!-- Catégorie 1 -->
+            <div class="category-card">
+                <div class="category-image-gallery">
+                    <img src="https://db3pap002files.storage.live.com/y4msjZiX8cic_1WgcU9xembWz1pJMR_STGo91df0Rt0ok9qj_rVysFt_0ihhdT9HDzQT3d71jI0q8G_KFF1KRsZE1KgwxuTLG3qSelAK2Bidgn6utkAxLGuUxY1vv1RUDdX8CLxMwyazRvVAMe2Cv8mRLNVZeF01MkxVOXZ0uZ7YSVGTdiyAwe7DDHNlN69vEgkLCuqwHX36VedbFcmDyqAijpKIh9Jxt8uxKtw_OYfHVo?encodeFailures=1&width=500&height=500" alt="Logo Design Xwook" class="category-image">
+                    <img src="https://db3pap002files.storage.live.com/y4mSAg8q-N2DYhF_9BEYIl32vVR4sIaZCK6J8TiBzA78v2L1z5YQJrnBz3T4CxSlSdxuZm6tI4MR1yDtABajwtQaVIXZikZQc2J4OYLDfwQm4Ug3O0daoK4wvXR8GuhGjqc0TYuDb6_vV9bt7yZc2sQ6FmumDchmHg9SrdcgA9uuDtX2v6ewy0j3MHDe68ivYmgLiwiaFp5HEt3TrupmhxamDy0T7xWN7lkYbAXWqCvIfo?encodeFailures=1&width=500&height=500" alt="Logo Design Portfolio" class="category-image">
+                </div>
+                <div class="category-content">
+                    <h2>Design de logos</h2>
+                    <p>Mes créations personnelles de logos diverses et variées.</p>
+                    <a href="#" class="button">Voir plus</a>
+                </div>
+            </div>
+    
+            <!-- Catégorie 2 avec une seule image -->
+            <div class="category-card">
+                <div class="category-image-gallery">
+                    <img src="https://www.funtechadventures.com/wp-content/uploads/2019/11/code-python2.png" alt="Image 3" class="category-image">
+                </div>
+                <div class="category-content">
+                    <h2>Codes Python</h2>
+                    <p>Des programmes que j'ai programmé en python.</p>
+                    <a href="#" class="button">Voir plus</a>
+                </div>
+            </div>
+    
+            <!-- Catégorie 3 avec plus de deux images -->
+            <div class="category-card">
+                <div class="category-image-gallery">
+                    <img src="file:///C:/Users/thaco/OneDrive/Documents/Admin/Portfolio/G%C3%A9n%C3%A9rationParIA/DALL.E%231.jpg" alt="Image 4" class="category-image">
+                    <img src="file:///C:/Users/thaco/OneDrive/Documents/Admin/Portfolio/G%C3%A9n%C3%A9rationParIA/DALL.E%232.jpg" alt="Image 5" class="category-image">
+                    <img src="file:///C:/Users/thaco/OneDrive/Documents/Admin/Portfolio/G%C3%A9n%C3%A9rationParIA/DALL.E%233.webp" alt="Image 6" class="category-image">
+                </div>
+                <div class="category-content">
+                    <h2>Génération d'image par l'IA</h2>
+                    <p>Des images que j'ai générées grâce à l'IA DALL.E de ChatGPT.</p>
+                    <a href="#" class="button">Voir plus</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Tom HACOT | Mon Portfolio</p>
+    </footer>
+
+    <script>
+
+        // Fonction pour mettre à jour le compteur de visiteurs
+        function updateVisitorCount() {
+            let count = localStorage.getItem("visitorCount");
+            if (!count) {
+                count = 0;
+            }
+            count = parseInt(count) + 1;
+            localStorage.setItem("visitorCount", count);
+            document.getElementById("visitor-count").innerText = count;
+        }
+
+        // Appelle la fonction pour mettre à jour le compteur dès que la page se charge
+        updateVisitorCount();
+
+        // Fonction pour afficher l'heure et la date actuelles
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Format des heures et minutes
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById("hours-minutes").innerText = `${hours}:${minutes}`;
+            
+            // Format des secondes
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds;
+            
+            // Format de la date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const date = now.toLocaleDateString('fr-FR', options);
+            document.getElementById("date").innerText = date;
+        }
+
+        // Met à jour l'heure toutes les secondes
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+    </script>
+    
+
+</body>
+</html>
