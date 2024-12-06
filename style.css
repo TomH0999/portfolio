@@ -34,10 +34,9 @@ header p {
     color: #333;
     padding: 20px;
     border-radius: 8px;
-    margin: 20px 0;
+    margin: 20px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: fit-content;
-    margin-left: 20px 50px;
 }
 
 .time {
